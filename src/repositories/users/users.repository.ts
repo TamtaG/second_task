@@ -32,7 +32,7 @@ export class UsersRepository {
     try {
       data.forEach(async (user) => {
         const newUser = new UserEntity();
-        newUser.externalId = user.id;
+        newUser.id = user.id;
         newUser.name = user.name;
         newUser.username = user.username;
         newUser.email = user.email;

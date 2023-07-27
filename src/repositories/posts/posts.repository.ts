@@ -34,7 +34,7 @@ export class PostsRepository {
     try {
       data.forEach(async (post) => {
         const newPost = new PostEntity();
-        newPost.externalId = post.id;
+        newPost.id = post.id;
         newPost.user = post.userId;
         newPost.title = post.title;
         newPost.body = post.body;

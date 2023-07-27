@@ -10,9 +10,6 @@ export class PostEntity extends BaseEntity {
   @RelationId((post: PostEntity) => post.user)
   userId: number;
 
-  @Column('int', { nullable: false })
-  externalId: number;
-
   @Column('varchar')
   title: string;
 

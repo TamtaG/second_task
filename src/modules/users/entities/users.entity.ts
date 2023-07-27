@@ -3,11 +3,6 @@ import BaseEntity from 'src/common/base.entity';
 
 @Entity({ name: 'user', schema: 'public' })
 export class UserEntity extends BaseEntity {
-  //if that was given to a user in an external source
-  //we also have our own id as primary column in the base entity
-  @Column('int')
-  externalId: number;
-
   @Column('varchar', { length: 100, nullable: false })
   name: string;
 
