@@ -67,12 +67,13 @@ export class PostsRepository {
     }
   }
 
-  async getUsersPostsFromDb(pagination: CommonQueryInterface) {
+  async getUsersPostsFromDb(pagination: CommonQueryInterface, userId: number) {
     try {
       const queryBuilder = this.postsRepo.createQueryBuilder('posts');
 
       const [items, count] = await Promise.all([
         queryBuilder
+          .where('posts.userId = :userId', { userId })
           .skip(pagination.pagination.skip)
           .take(pagination.pagination.limit)
           .getMany(),

@@ -16,7 +16,7 @@ export class PostsService {
       await this.postsRepo.savePostsToDb(postsFromExternalSource);
     }
 
-    const result = await this.postsRepo.getUsersPostsFromDb(pagination);
+    const result = await this.postsRepo.getUsersPostsFromDb(pagination, userId);
     return result;
   }
 
